@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kashmir to Kanyakumari Travels</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <!-- Left side login box -->
+    <div class="login-box">
+      <h2>Login</h2>
+      <form>
+        <label for="phone">Mobile Number</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter mobile number" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Main booking section -->
+    <div class="booking-section">
+      <h1>Kashmir to Kanyakumari Travels</h1>
+      <div class="booking-form">
+        <div class="form-group">
+          <label for="from">From</label>
+          <select id="from" name="from">
+            <option value="">Select City</option>
+            <option value="Kashmir">Kashmir</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Hyderabad">Hyderabad</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="to">To</label>
+          <select id="to" name="to">
+            <option value="">Select City</option>
+            <option value="Kanyakumari">Kanyakumari</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Goa">Goa</option>
+            <option value="Pune">Pune</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Departure Date</label>
+          <input type="date" id="date" name="date">
+        </div>
+
+        <button id="bookBtn" class="book-btn">Search Buses</button>
+      </div>
+
+      <div id="ticket-display" class="ticket hidden">
+        <h3>Available Ticket</h3>
+        <p><strong>Route:</strong> <span id="route"></span></p>
+        <p><strong>Departure Date:</strong> <span id="depart"></span></p>
+        <p><strong>Price:</strong> ₹<span id="price"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('bookBtn').addEventListener('click', function() {
+      const from = document.getElementById('from').value;
+      const to = document.getElementById('to').value;
+      const date = document.getElementById('date').value;
+      const ticket = document.getElementById('ticket-display');
+      const routeText = document.getElementById('route');
+      const departText = document.getElementById('depart');
+      const priceText = document.getElementById('price');
+
+      if (from && to && date) {
+        routeText.textContent = from + " → " + to;
+        departText.textContent = date;
+        priceText.textContent = Math.floor(Math.random() * 1500 + 500);
+        ticket.classList.remove('hidden');
+      } else {
+        alert("Please select all fields!");
+      }
+    });
+  </script>
+</body>
+</html>
