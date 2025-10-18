@@ -10,6 +10,14 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+/* ---- K2K Logo Styling ---- */
+.logo {
+  display: block;
+  width: 120px;           /* adjust size as you wish */
+  margin: 0 auto 15px;    /* center it above the form */
+  border-radius: 50%;     /* optional: make it circular */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
 .overlay {
   position: fixed;
