@@ -13,9 +13,9 @@ body {
 /* ---- K2K Logo Styling ---- */
 .logo {
   display: block;
-  width: 120px;           /* adjust size as you wish */
-  margin: 0 auto 15px;    /* center it above the form */
-  border-radius: 50%;     /* optional: make it circular */
+  width: 120px;          
+  margin: 0 auto 15px;    
+  border-radius: 50%;     
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
