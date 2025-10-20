@@ -1,8 +1,11 @@
-# Use a lightweight Nginx image
-FROM nginx:alpine
+# Step 1: Use an official Nginx image as the base
+FROM nginx:latest
 
-# Copy app files into Nginx html folder
+# Step 2: Copy your website files into Nginx's web directory
 COPY . /usr/share/nginx/html
 
-# Expose port 80
+# Step 3: Expose port 80 (where Nginx serves content)
 EXPOSE 80
+
+# Step 4: Define the default command to run Nginx
+CMD ["nginx", "-g", "daemon off;"]
