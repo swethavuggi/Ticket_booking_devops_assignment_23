@@ -2,18 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ticket-booking-deployment
+  labels:
+    app: ticket-booking-app
 spec:
-  replicas: 3
+  replicas: 2   # number of pods to run (you can scale this later)
   selector:
     matchLabels:
-      app: ticket-booking
+      app: ticket-booking-app
   template:
     metadata:
       labels:
-        app: ticket-booking
+        app: ticket-booking-app
     spec:
       containers:
-      - name: ticket-booking-container
-        image: your-dockerhub-username/ticket-booking-app:latest
-        ports:
-        - containerPort: 80
+        - name: ticket-booking-app
+          image: swethavuggi/ticket-booking-app:latest   # full Docker Hub path
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
